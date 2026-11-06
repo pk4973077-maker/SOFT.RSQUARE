@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Start Your Project | SOFT.R²</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #f5f7ff;
+    color: #14213d;
+}
+
+/* HEADER */
+
+header {
+    background: white;
+    padding: 12px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+}
+
+/* ORIGINAL TEXT LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #2563eb, #8539ed);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.logo-name {
+    font-size: 25px;
+    font-weight: 800;
+    color: #172554;
+    letter-spacing: 1px;
+}
+
+.logo-name span {
+    color: #7138e8;
+}
+
+header a {
+    text-decoration: none;
+    color: #7138e8;
+    font-weight: 700;
+}
+
+/* MAIN */
+
+.container {
+    max-width: 1000px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.page-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.page-heading h1 {
+    font-size: 36px;
+    color: #172554;
+    margin-bottom: 12px;
+}
+
+.page-heading h1 span {
+    color: #7138e8;
+}
+
+.page-heading p {
+    color: #64748b;
+    line-height: 1.7;
+}
+
+/* FORM */
+
+.form-box {
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(30,40,100,0.07);
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 22px;
+    color: #172554;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #eee8ff;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group.full {
+    grid-column: 1 / -1;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 9px;
+    color: #334155;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #dce1ee;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    background: #fff;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #7138e8;
+    box-shadow: 0 0 0 3px #eee8ff;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* SERVICES */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.service-option {
+    border: 1px solid #e0e4f0;
+    border-radius: 10px;
+    padding: 17px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.service-option:hover {
+    border-color: #7138e8;
+    background: #faf8ff;
+}
+
+.service-option input {
+    width: 18px;
+    height: 18px;
+    accent-color: #7138e8;
+}
+
+.service-option span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* PAYMENT */
+
+.payment-box {
+    background: #f8f6ff;
+    border: 1px solid #e2d8ff;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.payment-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.payment-card {
+    background: white;
+    border: 1px solid #e0e4f0;
+    padding: 20px 10px;
+    border-radius: 10px;
+    text-align: center;
+    opacity: 0.65;
+}
+
+.payment-card .icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.payment-card h4 {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.coming-soon {
+    font-size: 11px;
+    background: #eee8ff;
+    color: #7138e8;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+/* SUBMIT */
+
+.submit-btn {
+    width: 100%;
+    border: none;
+    padding: 16px;
+    border-radius: 9px;
+    background: linear-gradient(120deg,#2563eb,#8539ed);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px #c4b5fd;
+}
+
+/* MESSAGES */
+
+.error {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.success {
+    background: #dcfce7;
+    color: #166534;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.success h2 {
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #0b1533;
+    padding: 25px;
+    text-align: center;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+@media(max-width:650px) {
+
+    .form-box {
+        padding: 23px 17px;
+    }
+
+    .form-grid,
+    .services-grid,
+    .payment-options {
+        grid-template-columns: 1fr;
+    }
+
+    .page-heading h1 {
+        font-size: 29px;
+    }
+
+    header {
+        padding: 10px 4%;
+    }
+
+    .logo-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+
+    .logo-name {
+        font-size: 21px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-icon">R²</div>
+
+        <div class="logo-name">
+            SOFT<span>.R²</span>
+        </div>
+
+    </div>
+
+    <a href="/">← Back to Home</a>
+
+</header>
+
+
+<div class="container">
+
+    <div class="page-heading">
+
+        <h1>Start Your <span>Project</span></h1>
+
+        <p>
+            Tell us about your requirements.
+            We will help you build the right software solution.
+        </p>
+
+    </div>
+
+
+    {% if success %}
+
+    <div class="success">
+
+        <h2>Thank You, {{ client_name }}!</h2>
+
+        <p>
+            Your project form has been submitted successfully
+            for this session.
+        </p>
+
+        <p>
+            Permanent request storage and admin review
+            will be added in the next development phase.
+        </p>
+
+        <br>
+
+        <a href="/" style="color:#166534;font-weight:bold;">
+            Back to Homepage
+        </a>
+
+    </div>
+
+    {% else %}
+
+
+    {% if error %}
+
+    <div class="error">
+        {{ error }}
+    </div>
+
+    {% endif %}
+
+
+    <form method="POST" action="/start-project">
+
+
+        <!-- CLIENT DETAILS -->
+
+        <div class="form-box">
+
+            <h2 class="section-title">
+                01. Client Information
+            </h2>
+
+            <div class="form-grid">
+
+                <div class="input-group">
+
+                    <label>Full Name *</label>
+
+                    <input type="text"
+                           name="client_name"
+                           placeholder="Enter your full name"
+                           required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Email Address *</label>
+
+                    <input type="email"
+                           name="email"
+                           placeholder="Enter your email"
+                           required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Mobile Number *</label>
+
+                    <input type="tel"
+                           name="phone"
+                           placeholder="Enter mobile number"
+                           required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Client Type *</label>
+
+                    <select name="client_type" required>
+
+                        <option value="">Select Client Type</option>
+
+                        <option>Business</option>
+
+                        <option>University</option>
+
+                        <option>School</option>
+
+                        <option>Individual</option>
+
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Organization Name</label>
+
+                    <input type="text"
+                           name="organization"
+                           placeholder="Business / School / University">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>City *</label>
+
+                    <input type="text"
+                           name="city"
+                           placeholder="Enter your city"
+                           required>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICES -->
+
+        <div class="form-box">
+
+            <h2 class="section-title">
+                02. Select Your Services
+            </h2>
+
+            <p style="color:#64748b;margin-bottom:20px;">
+                Select one or multiple services according to your needs.
+            </p>
+
+
+            <div class="services-grid">
+
+                <label class="service-option">
+
+                    <input type="checkbox" name="services"
+                           value="Website Development">
+
+                    <span>🌐 Website Development</span>
+
+                </label>
+
+
+                <label class="service-option">
+
+                    <input type="checkbox" name="services"
+                           value="Custom Software">
+
+                    <span>💻 Custom Software</span>
+
+                </label>
+
+
+                <label class="service-option">
+
+                    <input type="checkbox" name="services"
+                           value="School Management">
+
+                    <span>🏫 School Management</span>
+
+                </label>
+
+
+                <label class="service-option">
+
+                    <input type="checkbox" name="services"
+                           value="University Management">
+
+                    <span>🎓 University Management</span>
+
+                </label>
+
+
+                <label class="service-option">
+
+                    <input type="checkbox" name="services"
+                           value="Business Management">
+
+                    <span>🏢 Business Management</span>
+
+                </label>
+
+
+                <label class="service-option">
+
+                    <input type="checkbox" name="services"
+                           value="Inventory Management">
+
+                    <span>📦 Inventory Management</span>
+
+                </label>
+
+
+                <label class="service-option">
+
+                    <input type="checkbox" name="services"
+                           value="Billing Software">
+
+                    <span>🧾 Billing Software</span>
+
+                </label>
+
+
+                <label class="service-option">
+
+                    <input type="checkbox" name="services"
+                           value="Other">
+
+                    <span>⚙️ Other Requirements</span>
+
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT DETAILS -->
+
+        <div class="form-box">
+
+            <h2 class="section-title">
+                03. Project Requirements
+            </h2>
+
+            <div class="form-grid">
+
+                <div class="input-group full">
+
+                    <label>Project / Software Name</label>
+
+                    <input type="text"
+                           name="project_name"
+                           placeholder="Enter project name (Optional)">
+
+                </div>
+
+
+                <div class="input-group full">
+
+                    <label>Describe Your Requirements *</label>
+
+                    <textarea name="requirements"
+                              placeholder="Explain what type of software you need and what features you want..."
+                              required></textarea>
+
+                </div>
+
+
+                <div class="input-group full">
+
+                    <label>Estimated Budget</label>
+
+                    <select name="budget">
+
+                        <option value="">Select Your Budget</option>
+
+                        <option>Below ₹5,000</option>
+
+                        <option>₹5,000 - ₹10,000</option>
+
+                        <option>₹10,000 - ₹25,000</option>
+
+                        <option>₹25,000 - ₹50,000</option>
+
+                        <option>Above ₹50,000</option>
+
+                        <option>Not Decided</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PAYMENT -->
+
+        <div class="form-box">
+
+            <h2 class="section-title">
+                04. Payment Options
+            </h2>
+
+            <div class="payment-box">
+
+                <h3>Payment Methods</h3>
+
+                <p style="color:#64748b;margin-top:10px;">
+
+                    Payment facilities will be activated
+                    after project review and quotation approval.
+
+                </p>
+
+
+                <div class="payment-options">
+
+                    <div class="payment-card">
+
+                        <div class="icon">📱</div>
+
+                        <h4>UPI Payment</h4>
+
+                        <span class="coming-soon">
+                            COMING SOON
+                        </span>
+
+                    </div>
+
+
+                    <div class="payment-card">
+
+                        <div class="icon">💳</div>
+
+                        <h4>Debit / Credit Card</h4>
+
+                        <span class="coming-soon">
+                            COMING SOON
+                        </span>
+
+                    </div>
+
+
+                    <div class="payment-card">
+
+                        <div class="icon">🏦</div>
+
+                        <h4>Net Banking</h4>
+
+                        <span class="coming-soon">
+                            COMING SOON
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="submit-btn">
+
+                Submit Project Request →
+
+            </button>
+
+        </div>
+
+
+    </form>
+
+    {% endif %}
+
+</div>
+
+
+<footer>
+
+    <h3>SOFT.R²</h3>
+
+    <p>BUILD • MANAGE • GROW</p>
+
+    <p>© 2026 SOFT.R². All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>
